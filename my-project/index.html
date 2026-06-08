@@ -1,455 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mohammed Safwaan | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#050816;
+    color:white;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:'';
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:
+    radial-gradient(circle at 20% 20%, rgba(0,229,255,.15), transparent 30%),
+    radial-gradient(circle at 80% 30%, rgba(123,97,255,.15), transparent 30%),
+    radial-gradient(circle at 50% 80%, rgba(0,255,209,.15), transparent 30%);
+    z-index:-1;
+}
+
+nav{
+    position:fixed;
+    top:20px;
+    left:50%;
+    transform:translateX(-50%);
+    backdrop-filter:blur(15px);
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.1);
+    padding:15px 30px;
+    border-radius:50px;
+    z-index:1000;
+}
+
+nav ul{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+}
+
+section{
+    min-height:100vh;
+    padding:100px 10%;
+}
+
+.hero{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+}
+
+.hero-text{
+    max-width:650px;
+}
+
+.hero h1{
+    font-size:70px;
+    background:linear-gradient(90deg,#00E5FF,#7B61FF);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.hero h2{
+    margin:15px 0;
+    font-size:30px;
+}
+
+.typing{
+    color:#00FFD1;
+    font-size:24px;
+    height:40px;
+}
+
+.btns{
+    margin-top:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 28px;
+    margin-right:15px;
+    border-radius:30px;
+    text-decoration:none;
+    color:white;
+    transition:.4s;
+}
+
+.primary{
+    background:linear-gradient(45deg,#00E5FF,#7B61FF);
+}
+
+.secondary{
+    border:1px solid #00E5FF;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+}
+
+.profile-card{
+    width:320px;
+    height:320px;
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:25px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:80px;
+    box-shadow:0 0 30px rgba(0,229,255,.2);
+}
+
+.title{
+    text-align:center;
+    font-size:42px;
+    margin-bottom:50px;
+    color:#00E5FF;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.1);
+    padding:25px;
+    border-radius:20px;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 25px rgba(0,229,255,.25);
+}
+
+.timeline{
+    border-left:3px solid #00E5FF;
+    padding-left:30px;
+}
+
+.timeline-item{
+    margin-bottom:40px;
+}
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    justify-content:center;
+}
+
+.skill{
+    padding:12px 20px;
+    border-radius:30px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.1);
+}
+
+.contact{
+    text-align:center;
+}
+
+.contact a{
+    color:#00E5FF;
+    text-decoration:none;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    border-top:1px solid rgba(255,255,255,.1);
+}
+
+@media(max-width:768px){
+
+.hero{
+    text-align:center;
+    justify-content:center;
+    gap:50px;
+}
+
+.hero h1{
+    font-size:48px;
+}
+
+nav ul{
+    gap:10px;
+    font-size:14px;
+}
+}
+</style>
+</head>
+
 <body>
 
-<!-- DIGITAL TWIN PROTOCOL -->
-
-<div id="digital-twin-system">
-
-    <!-- Boot Screen -->
-
-    <section id="boot-sequence">
-
-        <div class="boot-container">
-
-            <h1>DIGITAL TWIN PROTOCOL</h1>
-
-            <div class="boot-log">
-
-                <p>> Synchronizing Neural Data...</p>
-                <p>> Loading Technical Skills...</p>
-                <p>> Importing Academic Records...</p>
-                <p>> Connecting AI Systems...</p>
-                <p>> Digital Twin Activated</p>
-
-            </div>
-
-            <div class="boot-loader">
-
-                <div class="loader-bar"></div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- Home Screen -->
-
-    <section id="home-screen">
-
-        <div class="space-background">
-
-            <canvas id="particle-network"></canvas>
-
-            <div class="floating-orb orb-1"></div>
-            <div class="floating-orb orb-2"></div>
-            <div class="floating-orb orb-3"></div>
-
-        </div>
-
-        <div class="ai-core-container">
-
-            <div class="ai-core">
-
-                <h1>AI CORE</h1>
-
-                <span class="pulse-ring ring-1"></span>
-                <span class="pulse-ring ring-2"></span>
-                <span class="pulse-ring ring-3"></span>
-
-            </div>
-
-            <div class="orbit orbit-education">
-                <a href="#education-journey">
-                    EDUCATION
-                </a>
-            </div>
-
-            <div class="orbit orbit-experience">
-                <a href="#memory-bank">
-                    EXPERIENCE
-                </a>
-            </div>
-
-            <div class="orbit orbit-projects">
-                <a href="#project-vault">
-                    PROJECTS
-                </a>
-            </div>
-
-            <div class="orbit orbit-skills">
-                <a href="#skill-constellation">
-                    SKILLS
-                </a>
-            </div>
-
-            <div class="orbit orbit-certifications">
-                <a href="#archive-room">
-                    CERTIFICATIONS
-                </a>
-            </div>
-
-            <div class="orbit orbit-contact">
-                <a href="#contact-gateway">
-                    CONTACT
-                </a>
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- Digital Twin Panel -->
-
-    <section id="identity-core">
-
-        <div class="digital-twin-card">
-
-            <h2>DIGITAL TWIN PROFILE</h2>
-
-            <div class="profile-avatar">
-
-                <img src="profile.jpg" alt="Mohammed Safwaan">
-
-            </div>
-
-            <div class="identity-data">
-
-                <p>
-                    <strong>NAME :</strong>
-                    Mohammed Safwaan
-                </p>
-
-                <p>
-                    <strong>ROLE :</strong>
-                    Future Telecom Engineer
-                </p>
-
-                <p>
-                    <strong>STATUS :</strong>
-                    Learning • Building • Innovating
-                </p>
-
-                <p>
-                    <strong>MISSION :</strong>
-                    Build intelligent systems that improve
-                    communication and decision making.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- Skill Constellation -->
-
-    <section id="skill-constellation">
-
-        <h2>SKILL CONSTELLATION</h2>
-
-        <div class="constellation-map">
-
-            <div class="skill-node">
-                HTML
-            </div>
-
-            <div class="skill-node">
-                CSS
-            </div>
-
-            <div class="skill-node">
-                Python
-            </div>
-
-            <div class="skill-node">
-                SQL
-            </div>
-
-            <div class="skill-node">
-                Data Analysis
-            </div>
-
-            <div class="skill-node">
-                LTE RAN
-            </div>
-
-            <div class="skill-node">
-                OpenAirInterface
-            </div>
-
-            <div class="skill-node">
-                Communication
-            </div>
-
-            <div class="skill-node">
-                Teamwork
-            </div>
-
-            <div class="skill-node">
-                Problem Solving
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- Memory Bank -->
-
-    <section id="memory-bank">
-
-        <h2>EXPERIENCE MEMORY BANK</h2>
-
-        <div class="memory-capsule">
-
-            <h3>
-                Memory Capsule 001
-            </h3>
-
-            <h4>
-                Sasken Technologies
-            </h4>
-
-            <p>
-                Internship
-            </p>
-
-            <ul>
-
-                <li>
-                    LTE RAN Research
-                </li>
-
-                <li>
-                    OpenAirInterface Study
-                </li>
-
-                <li>
-                    Technical Presentations
-                </li>
-
-                <li>
-                    Theory to Implementation Mapping
-                </li>
-
-            </ul>
-
-        </div>
-
-    </section>
-
-    <!-- Education Journey -->
-
-    <section id="education-journey">
-
-        <h2>SPACE EDUCATION JOURNEY</h2>
-
-        <div class="journey-track">
-
-            <div class="planet-node">
-
-                <h3>EARTH</h3>
-
-                <p>
-                    Vidyodaya PU College
-                </p>
-
-                <p>
-                    Score: 93%
-                </p>
-
-                <p>
-                    2021 - 2023
-                </p>
-
-            </div>
-
-            <div class="space-line"></div>
-
-            <div class="planet-node">
-
-                <h3>SPACE STATION</h3>
-
-                <p>
-                    NMAM Institute of Technology
-                </p>
-
-                <p>
-                    B.Tech Information Science Engineering
-                </p>
-
-                <p>
-                    CGPA 7.35
-                </p>
-
-                <p>
-                    2023 - Present
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- Project Vault -->
-
-    <section id="project-vault">
-
-        <h2>PROJECT VAULT</h2>
-
-        <div class="vault-grid">
-
-            <div class="vault-card">
-
-                <div class="vault-door">
-
-                    <h3>
-                        VAULT 01
-                    </h3>
-
-                    <p>
-                        Hospital Management System
-                    </p>
-
-                    <button>
-                        UNLOCK VAULT
-                    </button>
-
-                </div>
-
-            </div>
-
-            <div class="vault-card">
-
-                <div class="vault-door">
-
-                    <h3>
-                        VAULT 02
-                    </h3>
-
-                    <p>
-                        Udemy Price Prediction
-                    </p>
-
-                    <button>
-                        UNLOCK VAULT
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- Archive Room -->
-
-    <section id="archive-room">
-
-        <h2>CERTIFICATION ARCHIVE</h2>
-
-        <div class="archive-grid">
-
-            <div class="archive-card">
-                Software Engineering Fundamentals
-            </div>
-
-            <div class="archive-card">
-                TypeScript Programming
-            </div>
-
-            <div class="archive-card">
-                Microsoft Azure Learning Challenge
-            </div>
-
-            <div class="archive-card">
-                Microsoft AI Learning Challenge
-            </div>
-
-            <div class="archive-card">
-                Applied AI Learning Challenge
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- Contact Gateway -->
-
-    <section id="contact-gateway">
-
-        <h2>COMMUNICATION GATEWAY</h2>
-
-        <div class="gateway-terminal">
-
-            <div class="signal-panel">
-
-                <p>
-                    LOCATION:
-                    Udupi, Karnataka
-                </p>
-
-                <p>
-                    EMAIL:
-                    mohammedsafwaan1424@gmail.com
-                </p>
-
-                <p>
-                    PHONE:
-                    +91 8904477857
-                </p>
-
-                <p>
-                    LINKEDIN:
-                    linkedin.com/in/mohammed-safwaan-817262320
-                </p>
-
-            </div>
-
-            <div class="gateway-actions">
-
-                <button>
-                    TRANSMIT EMAIL
-                </button>
-
-                <button>
-                    OPEN LINKEDIN NETWORK
-                </button>
-
-                <button>
-                    INITIATE COLLABORATION
-                </button>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- Floating AI Assistant -->
-
-    <div id="ai-assistant">
-
-        <div class="assistant-orb">
-
-            AI
-
-        </div>
-
-    </div>
-
-    <!-- Footer -->
-
-    <footer>
-
-        <p>
-            DIGITAL TWIN PROTOCOL © 2026
-            MOHAMMED SAFWAAN
-        </p>
-
-    </footer>
+<nav>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<section class="hero">
+
+<div class="hero-text">
+<p>Hello, I'm</p>
+
+<h1>MOHAMMED SAFWAAN</h1>
+
+<h2>Information Science Engineering Student</h2>
+
+<div class="typing" id="typing"></div>
+
+<p>
+Building Intelligent Solutions Through Technology,
+Data, and Innovation.
+</p>
+
+<div class="btns">
+<a href="#" class="btn primary">Download Resume</a>
+<a href="#contact" class="btn secondary">Contact Me</a>
+</div>
+</div>
+
+<div class="profile-card">
+🚀
+</div>
+
+</section>
+
+<section id="about">
+
+<h2 class="title">About Me</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Passionate Engineer</h3>
+<p>
+Dedicated and hardworking engineering student passionate
+about Telecommunications, AI, Data Analytics and Software Development.
+</p>
+</div>
+
+<div class="card">
+<h3>Innovation Driven</h3>
+<p>
+Interested in solving real-world problems using technology
+and intelligent systems.
+</p>
+</div>
+
+<div class="card">
+<h3>Continuous Learner</h3>
+<p>
+Actively learning cloud computing, LTE RAN concepts,
+data analysis and modern software engineering.
+</p>
+</div>
 
 </div>
 
+</section>
+
+<section id="experience">
+
+<h2 class="title">Experience</h2>
+
+<div class="timeline">
+
+<div class="timeline-item card">
+<h3>Sasken Technologies Limited</h3>
+<p>Intern | June 2025 – July 2025</p>
+<br>
+
+<ul>
+<li>Studied LTE RAN concepts</li>
+<li>Worked with OpenAirInterface</li>
+<li>Mapped LTE theory to OAI code</li>
+<li>Presented implementation walkthroughs</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="education">
+
+<h2 class="title">Education</h2>
+
+<div class="timeline">
+
+<div class="timeline-item card">
+<h3>NMAM Institute of Technology</h3>
+<p>B.Tech Information Science & Engineering</p>
+<p>CGPA: 7.35</p>
+<p>2023 – Present</p>
+</div>
+
+<div class="timeline-item card">
+<h3>Vidyodaya Pre-University College</h3>
+<p>93%</p>
+<p>2021 – 2023</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="skills">
+
+<h2 class="title">Skills</h2>
+
+<div class="skills">
+
+<div class="skill">HTML</div>
+<div class="skill">CSS</div>
+<div class="skill">Python</div>
+<div class="skill">SQL</div>
+<div class="skill">Data Analysis</div>
+<div class="skill">LTE RAN</div>
+<div class="skill">OpenAirInterface</div>
+<div class="skill">Teamwork</div>
+<div class="skill">Communication</div>
+<div class="skill">Problem Solving</div>
+
+</div>
+
+</section>
+
+<section id="projects">
+
+<h2 class="title">Projects</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Hospital Management System</h3>
+<br>
+<ul>
+<li>Patient Registration</li>
+<li>Doctor Management</li>
+<li>Appointment Scheduling</li>
+<li>Billing System</li>
+<li>Medical Records Management</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Udemy Price Prediction</h3>
+<br>
+<ul>
+<li>Data Cleaning</li>
+<li>Trend Analysis</li>
+<li>Pricing Prediction</li>
+<li>Enrollment Analytics</li>
+<li>Statistical Insights</li>
+</ul>
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2 class="title">Contact</h2>
+
+<div class="card contact">
+
+<h3>Let's Connect</h3>
+<br>
+
+<p>📍 Udupi, Karnataka</p>
+<p>📧 <a href="mailto:mohammedsafwaan1424@gmail.com">mohammedsafwaan1424@gmail.com</a></p>
+<p>📞 +91 8904477857</p>
+
+<br>
+
+<p>
+<a href="https://linkedin.com/in/mohammed-safwaan-817262320">
+LinkedIn Profile
+</a>
+</p>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Mohammed Safwaan | Portfolio
+</footer>
+
+<script>
+
+const roles = [
+"LTE RAN Enthusiast",
+"AI Learner",
+"Data Analyst",
+"Web Developer"
+];
+
+let roleIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+const typingElement = document.getElementById("typing");
+
+function typeEffect(){
+
+let currentRole = roles[roleIndex];
+
+if(!deleting){
+typingElement.textContent =
+currentRole.substring(0,charIndex++);
+if(charIndex > currentRole.length){
+deleting = true;
+setTimeout(typeEffect,1200);
+return;
+}
+}
+else{
+typingElement.textContent =
+currentRole.substring(0,charIndex--);
+if(charIndex < 0){
+deleting = false;
+roleIndex = (roleIndex + 1) % roles.length;
+}
+}
+
+setTimeout(typeEffect,deleting ? 50 : 100);
+}
+
+typeEffect();
+
+</script>
+
 </body>
+</html>
